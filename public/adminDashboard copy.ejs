@@ -1,0 +1,30 @@
+<!-- adminDashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    
+    <!-- Add New Villager Form -->
+    <form action="/admin/addVillager" method="POST">
+        <input type="text" name="mobileNumber" placeholder="Mobile Number" required><br>
+        <input type="text" name="voterId" placeholder="Voter ID" required><br>
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="address" placeholder="Address" required><br>
+        <textarea name="otherDetails" placeholder="Other Details"></textarea><br>
+        <button type="submit">Add Villager</button>
+    </form>
+
+    <hr>
+
+    <!-- View Villagers -->
+    <form action="/admin/villager/:mobileNumber" method="GET">
+        <input type="text" name="mobileNumber" placeholder="Enter Mobile Number" required>
+        <button type="submit">Search Villager</button>
+    </form>
+</body>
+</html>
