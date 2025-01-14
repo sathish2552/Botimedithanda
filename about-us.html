@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Video Slideshow</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        /* Individual Slides */
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Slide Navigation Buttons */
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slides img, .slides video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- First Image -->
+        <div class="slides" id="slide1">
+            <img src="images/WhatsApp Image 2025-01-13 at 20.30.11_d04a127f.jpg" alt="First Image">
+        </div>
+
+        <!-- Second Image -->
+        <div class="slides" id="slide2">
+            <img src="images/WhatsApp Image 2025-01-13 at 20.30.11_d04a127f.jpg" alt="Second Image">
+        </div>
+
+        <!-- Video -->
+        <div class="slides" id="slide3">
+            <video src="videos/WhatsApp Video 2025-01-13 at 20.38.36_aefcfb9d.mp4" autoplay loop muted></video>
+        </div>
+
+        <!-- Slide Navigation Arrows -->
+        <div class="slide-nav">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slides");
+        const totalSlides = slides.length;
+
+        // Show slide based on index
+        function changeSlide(n) {
+            slides[currentSlide].style.display = "none";  // Hide current slide
+            currentSlide = (n + totalSlides) % totalSlides;  // Calculate the new slide index
+            slides[currentSlide].style.display = "block";  // Show the new slide
+        }
+
+        // Initialize the first slide
+        changeSlide(0);
+    </script>
+
+</body>
+</html>
