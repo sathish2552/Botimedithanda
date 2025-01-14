@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BOTIMEDHI THANDA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Telugu', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #267920;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header-btns {
+            margin-top: 10px;
+        }
+
+        .header-btns a {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .header-btns a:hover {
+            background-color: #1abc9c;
+        }
+
+        .header-btns .active {
+            background-color: #1abc9c;
+        }
+
+        /* Slideshow Section */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 500px;
+        }
+
+        .slides img,
+        .slides video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slideshow-container .prev,
+        .slideshow-container .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+
+        .slideshow-container .prev {
+            left: 10px;
+        }
+
+        .slideshow-container .next {
+            right: 10px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #267920;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            margin: auto;
+            max-width: 500px;
+        }
+
+        .contact-info p {
+            background-color: #f4f4f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #267920;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to బోటి మీది తండా Official Website </h1>
+        <div class="header-btns">
+            <a href="index.html" class="active">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="login.html">Admin Login</a>
+        </div>
+    </header>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="images/villagephtoto2.jpg" alt="Hanuman Temple">
+        </div>
+        <div class="slides">
+            <img src="images/village OverView.jpg" alt="Botimedhi Thanda">
+        </div>
+        <div class="slides">
+            <img src="images/WhatsApp Image 2025-01-13 at 20.30.11_d04a127f.jpg" alt="Scenic View">
+        </div>
+        <div class="slides">
+            <img src="images/waterfalls.jpg" autoplay muted loop></img>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- About Section -->
+    <section>
+        <h2>About Our Village</h2>
+        <p>Welcome to బోటి మీది తండా! Our village is rich in culture, tradition, and natural beauty. We take pride in our close-knit community and shared values.</p>
+        <p>Botimeedithanda is a small Village/hamlet in Narayanapur Mandal in Yadadrigiri Bhuvanagiri District of Telangana State, India. It comes under Janagam Panchayath. It belongs to Telangana region . It is located 46 KM towards west from District head quarters Nalgonda.
+
+            Botimeedithanda Pin code is 508253 and postal head office is Narayanpur (Nalgonda).
+            
+            Botimeedithanda is surrounded by Choutuppal Mandal towards North , Munugode Mandal towards East , Manchal Mandal towards west , Chityala Mandal towards East .
+            
+            Bhongir , Hyderabad , Devarakonda , Jangaon are the near by Cities to Botimeedithanda.
+            
+            This Place is in the border of the Nalgonda District and Rangareddi District. Rangareddi District Manchal is west towards this place .</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Email:</strong> armyrajesh@gmail.com</p>
+            <p><strong>Phone:</strong> 7207115412</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 బోటి మీది తండా | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slides');
+
+        function changeSlide(n) {
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + n + slides.length) % slides.length;
+            slides[currentSlide].style.display = 'block';
+        }
+
+        // Show the first slide
+        slides[currentSlide].style.display = 'block';
+
+        // Auto-play slides
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000); // Change every 5 seconds
+    </script>
+</body>
+</html>
