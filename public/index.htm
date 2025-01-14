@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BOTIMEDHI THANDA</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #267920; /* Green background */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
+        .header-btns {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .admin-btn, .home-btn, .about-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin: 5px;
+        }
+
+        .admin-btn:hover, .home-btn:hover, .about-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        /* Individual Slides */
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Slide Navigation Buttons */
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .radio-btns {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .radio-btns input[type="radio"] {
+            display: none;
+        }
+
+        .radio-btns label {
+            margin: 0 5px;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .radio-btns input[type="radio"]:checked + label {
+            background-color: #267920;
+            color: white;
+        }
+
+        /* Show slides when radio button is checked */
+        input[type="radio"]:nth-of-type(1):checked ~ .slides:nth-of-type(1),
+        input[type="radio"]:nth-of-type(2):checked ~ .slides:nth-of-type(2),
+        input[type="radio"]:nth-of-type(3):checked ~ .slides:nth-of-type(3),
+        input[type="radio"]:nth-of-type(4):checked ~ .slides:nth-of-type(4) {
+            display: block;
+        }
+
+        /* Style for Images and Video */
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .slides video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #267920;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Media Queries */
+        @media only screen and (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.3rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            section h2 {
+                font-size: 1.1rem;
+            }
+
+            footer {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Green Background -->
+    <header>
+        <h1>బోటి మీది తండా</h1>
+        <div class="header-btns">
+            <a href="index.html" class="home-btn">Home</a>
+            <a href="about-us.html" class="about-btn">About Us</a>
+            <a href="login.html" class="admin-btn">Admin Login</a>
+        </div>
+    </header>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slides" id="slide1">
+            <img src="images/villagephtoto2.jpg" alt="Hanuman temple">
+        </div>
+        <div class="slides" id="slide2">
+            <img src="images/WhatsApp Image 2025-01-14 at 12.38.23_80098091.jpg" alt="Botimeedi thanda">
+        </div>
+        <div class="slides" id="slide3">
+            <img src="images/WhatsApp Image 2025-01-13 at 20.30.11_d04a127f.jpg" alt="Botimeedi thanda">
+        </div>
+        <div class="slides" id="slide4">
+            <video src="videos/WhatsApp_Video_2025-01-13_at_20.38.36.mp4" autoplay loop muted></video>
+        </div>
+
+        <!-- Slide Navigation Arrows -->
+        <div class="slide-nav">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Radio Buttons for Slide Navigation -->
+        <div class="radio-btns">
+            <input type="radio" id="radio1" name="slide" checked onclick="changeSlide(0)">
+            <label for="radio1"></label>
+            <input type="radio" id="radio2" name="slide" onclick="changeSlide(1)">
+            <label for="radio2"></label>
+            <input type="radio" id="radio3" name="slide" onclick="changeSlide(2)">
+            <label for="radio3"></label>
+            <input type="radio" id="radio4" name="slide" onclick="changeSlide(3)">
+            <label for="radio4"></label>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section>
+        <h2>About Our Village</h2>
+        <p>Our village is a beautiful place where tradition and community come together. Welcome!</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <h2>Contact</h2>
+        <p>Email: armyrajesh@gmail.com</p>
+        <p>Phone: 7207115412</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Botimedhi thanda village. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slides");
+        const totalSlides = slides.length;
+
+        function changeSlide(n) {
+            slides[currentSlide].style.display = "none";
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].style.display = "block";
+        }
+
+        // Initialize the first slide
+        changeSlide(0);
+    </script>
+</body>
+</html>
